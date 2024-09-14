@@ -17,7 +17,10 @@ app.post("/webhook", (req, res) => {
   const startTime = Date.now();
   console.log(">>>>>Data", req.body);
 
-  return res.status(200).json({ data: req.body });
+  res.status(200).json({
+    status: true,
+    msg: "OK",
+  });
   // Lấy Bearer token từ header Authorization
   const authHeader = req.headers["authorization"];
   const bearerToken =
